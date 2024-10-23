@@ -28,7 +28,6 @@ Descripton of the different options:
 3. Execute SQL queries on database and save results to (dist\queries).
  * This one will run the SQL queries in Queries.py and store the results from all the queries in the queries local folder.
  * The general format for the results are "DateOfExecution_QueryType_TimePeriod.csv".
-    * Example is: "2024-09-03_AvgRunTime_3_Months.csv", which indicates a query that shows the average run time of tests for each CPATS, over the last 3 months from September 3, 2024.
  * This option has the selection of running the queries on 4 different time periods.
     * Last 3 Months
     * Last 6 months
@@ -59,14 +58,10 @@ Second step of the logging proces. Loads all files in the 'dist\semiprocessed' d
 Also part of the third step, which is running the SQL queries on the database. This performs the predefined queries and stores the results to 'dist\queries'.
 
 Queries.py:
-This file is mainly what needs to be changed in the code to interact with this tool. New queries can be added here to gain new data. 
-I've made it very clear where these changes would go in the Queries.py file, check it out.
+New queries can be added here to gain new data. 
 
 LastDataFetch.txt and LastDataUpload.txt:
 These just store the last dates for each of these actions, as mentioned in option 4.
-
-run.txt:
-PowerShell input necessary to run the program.
 
 Some python dependancies to know:
  * Multiprocessing (pool)
