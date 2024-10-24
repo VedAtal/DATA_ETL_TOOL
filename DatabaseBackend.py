@@ -74,7 +74,7 @@ def get_immediate_subdirectories(localDirectory):
 # ----------------------------------------------------- #
 #      TO ADD MORE DATA TO THE DATABASE DO IT HERE      #
 # ----------------------------------------------------- #
-insert_cpats_data_query = '''INSERT INTO data VALUES(?,?,?,?,?,?,?)'''
+insert_data_query = '''INSERT INTO data VALUES(?,?,?,?,?,?,?)'''
 
 def store_data(tree, databaseName, folderName):
     conn = connect(databaseName)
@@ -112,7 +112,7 @@ def store_data(tree, databaseName, folderName):
                     end_time = 'NULL'
     try:
         # Uses the insert query to insert a new query for this database table
-        curs.execute(insert_cpats_data_query, (name, uut_name, uut_pn, uut_sn, date, start_time, end_time))
+        curs.execute(insert_data_query, (name, uut_name, uut_pn, uut_sn, date, start_time, end_time))
         return 0
     except sqlite3.Error:
         print(str(sqlite3.Error) + " " + folderName)
